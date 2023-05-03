@@ -13,4 +13,8 @@ module.exports = {
   findUserByName: async (username) => {
     return await User.findOne({ username });
   },
+
+  findAllStudents: async () => {
+    return await User.find({ role: "student" }, { password: false });
+  },
 };

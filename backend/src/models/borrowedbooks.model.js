@@ -4,9 +4,6 @@ const Schema = mongoose.Schema;
 
 const BorrowedBookSchema = new Schema(
   {
-    _id: {
-      type: mongoose.Schema.Types.ObjectId,
-    },
     bookId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "books",
@@ -23,6 +20,10 @@ const BorrowedBookSchema = new Schema(
     },
     returnDt: {
       type: Date,
+      required: true,
+    },
+    status: {
+      type: Boolean,
       required: true,
     },
   },
